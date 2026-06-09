@@ -4,10 +4,10 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, company, email, phone, projectType, budgetRange, message } = body;
+    const { name, company, email, phone, projectType, businessScale, message } = body;
 
     // Validate request fields
-    if (!name || !email || !phone || !projectType || !budgetRange || !message) {
+    if (!name || !email || !phone || !projectType || !message) {
       return NextResponse.json(
         { error: "Missing required fields in submission." },
         { status: 400 }
@@ -47,8 +47,8 @@ export async function POST(request: Request) {
               <td style="padding: 10px 0; color: #0F172A; font-weight: 600;">${projectType}</td>
             </tr>
             <tr style="border-bottom: 1px solid #F1F5F9;">
-              <td style="padding: 10px 0; font-weight: bold; color: #475569;">Budget Range</td>
-              <td style="padding: 10px 0; color: #10B981; font-weight: 600;">${budgetRange}</td>
+              <td style="padding: 10px 0; font-weight: bold; color: #475569;">Business Scale</td>
+              <td style="padding: 10px 0; color: #10B981; font-weight: 600;">${businessScale || "Not specified"}</td>
             </tr>
           </table>
           
@@ -98,9 +98,8 @@ export async function POST(request: Request) {
       console.log("\n========================================================");
       console.log(`[FORWARDED LEAD] Destination: ${destinationInbox}`);
       console.log(`[CLIENT EMAIL] From: ${email} | Phone: ${phone}`);
-      console.log(`[SCOPE] Project: ${projectType} | Budget: ${budgetRange}`);
-      console.log(`[BRIEF] ${message}`);
-      console.log("========================================================\n");
+      console.log(`[SCOPE] Project: ${projectType} | Scale: ${businessScale || 'N/A'}`);
+      console.log(`[BRIEF] ${message}`);      console.log("========================================================\n");
     }
 
     return NextResponse.json({ success: true, message: "Proposal request forwarded successfully." });
