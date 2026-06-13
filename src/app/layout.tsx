@@ -10,27 +10,32 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "FIFTH ORBIT | Custom Software, ERP Systems & AI Automation",
+    default: "FIFTH ORBIT | Best Custom Software & AI Automation Agency",
     template: "%s | FIFTH ORBIT"
   },
   description:
-    "FIFTH ORBIT is a premium technology consulting and software development agency. We build custom ERP systems, AI automation, analytics platforms, and digital transformation solutions that scale businesses.",
+    "FIFTH ORBIT is a premium custom software development and AI automation consulting agency. We build high-performance custom ERP systems, intelligent AI workflow automation, enterprise analytics dashboards, and digital transformation solutions.",
   keywords: [
-    "AI Automation Company",
-    "Software Development Company",
-    "ERP Development Services",
-    "Business Automation Solutions",
-    "Custom Software Development",
-    "Analytics Dashboard Development",
-    "Manufacturing ERP System",
-    "Website Development Services",
-    "Enterprise Software Solutions",
-    "Digital Transformation Services",
+    "Best Custom Software Development Agency",
+    "Top AI Automation Consulting Agency",
+    "AI Workflow Automation Agency",
+    "Enterprise ERP Systems Agency",
+    "Bespoke CRM & Software Engineering",
+    "Premium Software Development Agency",
+    "Corporate Digital Transformation",
+    "Next.js Software Agency",
+    "Manufacturing ERP Solutions",
+    "Salon & Retail Tech Consulting",
+    "Business Process Automation Developers",
+    "AI Integration Solutions",
   ],
   metadataBase: new URL("https://fifthorbit.com"),
   alternates: { canonical: "/" },
+  verification: {
+    google: "uoq8RTEL72G0-E9Y0VxIYrDgFVY2Tgf-g7KYT64CzOw",
+  },
   openGraph: {
-    title: "FIFTH ORBIT | Custom Software, ERP Systems & AI Automation",
+    title: "FIFTH ORBIT | Best Custom Software & AI Automation Agency",
     description:
       "Engineering digital growth through custom software, AI automation, enterprise ERP systems, and analytics dashboards.",
     url: "https://fifthorbit.com",
@@ -41,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FIFTH ORBIT | Custom Software, ERP Systems & AI Automation",
+    title: "FIFTH ORBIT | Best Custom Software & AI Automation Agency",
     description:
       "Engineering digital growth through custom software, AI automation, enterprise ERP systems, and analytics dashboards.",
     images: ["/black.png"],

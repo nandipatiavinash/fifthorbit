@@ -54,14 +54,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col z-10 border border-[#E2E8F0]"
       >
         {/* Banner */}
-        <div className="relative p-6 md:p-8 bg-[#0F172A] flex-shrink-0 flex items-center justify-between overflow-hidden border-b border-[#1E293B]">
+        <div className="relative p-5 sm:p-6 md:p-8 bg-[#0F172A] flex-shrink-0 flex items-center justify-between overflow-hidden border-b border-[#1E293B]">
           {/* Orbit rings */}
           <div className="absolute -right-16 -bottom-16 w-52 h-52 border border-white/5 rounded-full pointer-events-none" />
           <div className="absolute -right-28 -bottom-28 w-80 h-80 border border-white/5 rounded-full pointer-events-none" />
           <div className="absolute -right-40 -bottom-40 w-[400px] h-[400px] border border-white/5 rounded-full pointer-events-none" />
 
           {/* Title */}
-          <div className="relative z-10 space-y-1.5 pr-8 sm:pr-0">
+          <div className="relative z-10 space-y-1.5 pr-10 sm:pr-0">
             <span className="inline-block text-[10px] font-bold text-[#0A84FF] uppercase tracking-widest bg-[#0A84FF]/10 px-2 py-0.5 rounded">
               {project.industry} Case Study
             </span>
@@ -99,9 +99,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-6 md:p-10 space-y-8">
+        <div className="flex-1 overflow-y-auto p-5 sm:p-6 md:p-10 space-y-8">
           {/* Meta grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-4 px-6 border border-[#E2E8F0] rounded-xl bg-[#F8FAFC] text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-4 px-4 sm:px-6 border border-[#E2E8F0] rounded-xl bg-[#F8FAFC] text-sm">
             <div>
               <span className="block text-[10px] text-[#475569] uppercase tracking-wider font-semibold mb-1">Client Industry</span>
               <span className="font-semibold text-[#0F172A]">{project.industry}</span>

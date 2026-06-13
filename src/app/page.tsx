@@ -346,11 +346,11 @@ export default function Home() {
         <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${isScrolled ? "glass-nav py-3" : "bg-transparent py-5"}`}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center gap-3 select-none group">
-              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-12 h-12">
-                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="48px" className="object-contain" priority />
+            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center gap-2 md:gap-3 select-none group">
+              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-9 h-9 md:w-10 md:h-10 flex-shrink-0">
+                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="40px" className="object-contain" priority />
               </motion.div>
-              <span className="font-black text-base tracking-[0.2em] uppercase text-[#0F172A]">FIFTH ORBIT</span>
+              <span className="font-black text-sm md:text-base tracking-[0.18em] uppercase text-[#0F172A] pt-0.5">FIFTH ORBIT</span>
             </a>
 
             {/* Desktop nav */}
@@ -424,7 +424,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl xl:text-7xl font-black tracking-tight text-[#0F172A] leading-[1.04] float-in float-in-delay-1">
+                <h1 className="text-4xl xs:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight text-[#0F172A] leading-[1.04] float-in float-in-delay-1">
                   We help businesses{" "}
                   <br className="hidden sm:inline" />
                   <CycleWord />
@@ -468,32 +468,20 @@ export default function Home() {
                   style={{ objectPosition: "center 20%", transform: "scale(1.25)", transformOrigin: "center top" }} />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/50 via-transparent to-transparent pointer-events-none" />
-                {/* Badge */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                  <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-3">
-                    <div className="relative w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
-                      <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="32px" className="object-contain" />
-                    </div>
-                    <div>
-                      <div className="text-white text-[11px] font-bold">FIFTH ORBIT</div>
-                      <div className="text-white/50 text-[10px]">Engineering Excellence</div>
-                    </div>
-                  </div>
-                  {/* Sound toggle */}
-                  <button
-                    onClick={() => {
-                      const vid = document.getElementById('hero-video') as HTMLVideoElement;
-                      if (vid) { vid.muted = !vid.muted; }
-                    }}
-                    className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                    aria-label="Toggle sound"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-                    </svg>
-                  </button>
-                </div>
+                {/* Sound toggle (positioned bottom-right for clean visual alignment) */}
+                <button
+                  onClick={() => {
+                    const vid = document.getElementById('hero-video') as HTMLVideoElement;
+                    if (vid) { vid.muted = !vid.muted; }
+                  }}
+                  className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+                  aria-label="Toggle sound"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  </svg>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -679,7 +667,7 @@ export default function Home() {
 
             {/* Stats */}
             <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 xxs:grid-cols-2 gap-4 md:gap-5">
                 {[
                   { value: 100, suffix: "%", label: "SLA Alignment" },
                   { value: 3, suffix: "+", label: "Enterprise Clients" },

@@ -17,6 +17,9 @@
   --ease-spring: cubic-bezier(.22,.68,0,1.2);
   --ease-out-smooth: cubic-bezier(.22,.68,0,1);
   --ease-in-smooth: cubic-bezier(0.4, 0, 1, 1);
+
+  --breakpoint-xs: 380px;
+  --breakpoint-xxs: 320px;
 }
 
 :root {
