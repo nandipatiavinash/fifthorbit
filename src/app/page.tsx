@@ -185,6 +185,14 @@ function Marquee() {
   );
 }
 
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "services", label: "Services" },
+  { id: "projects", label: "Projects" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+
 /* ─── Main Page ─────────────────────────────────────────────────────────────── */
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -346,20 +354,20 @@ export default function Home() {
         <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${isScrolled ? "glass-nav py-3" : "bg-transparent py-5"}`}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center gap-2 md:gap-3 select-none group">
-              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-9 h-9 md:w-10 md:h-10 flex-shrink-0">
-                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="40px" className="object-contain" priority />
+            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center select-none group -ml-1.5">
+              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-12 h-12 flex-shrink-0 -mr-1.5 translate-y-[1.5px]">
+                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="48px" className="object-contain" priority />
               </motion.div>
-              <span className="font-black text-sm md:text-base tracking-[0.18em] uppercase text-[#0F172A] pt-0.5">FIFTH ORBIT</span>
+              <span className="font-black text-sm md:text-base tracking-[0.18em] uppercase text-[#0F172A]">FIFTH ORBIT</span>
             </a>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-[#475569]">
-              {["home", "services", "projects", "about", "contact"].map(s => (
-                <a key={s} href={`#${s}`} onClick={e => scrollTo(e, s)}
-                  className={`relative transition-colors hover:text-[#0A84FF] ${activeSection === s ? "text-[#0A84FF]" : ""}`}>
-                  {s}
-                  {activeSection === s && (
+            <nav className="hidden md:flex items-center gap-7 text-[13px] font-semibold text-[#475569]">
+              {NAV_ITEMS.map(item => (
+                <a key={item.id} href={`#${item.id}`} onClick={e => scrollTo(e, item.id)}
+                  className={`relative transition-colors hover:text-[#0A84FF] py-1 ${activeSection === item.id ? "text-[#0A84FF]" : ""}`}>
+                  {item.label}
+                  {activeSection === item.id && (
                     <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 right-0 h-px bg-[#0A84FF]" />
                   )}
                 </a>
@@ -385,10 +393,10 @@ export default function Home() {
               <motion.div initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.3, ease: easeOut }}
                 className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-[#E2E8F0] shadow-xl p-6 flex flex-col gap-4">
-                {["home", "services", "projects", "about", "contact"].map(s => (
-                  <a key={s} href={`#${s}`} onClick={e => scrollTo(e, s)}
-                    className="text-lg font-bold uppercase tracking-widest text-[#0F172A] hover:text-[#0A84FF] transition-colors py-1">
-                    {s}
+                {NAV_ITEMS.map(item => (
+                  <a key={item.id} href={`#${item.id}`} onClick={e => scrollTo(e, item.id)}
+                    className="text-lg font-semibold text-[#0F172A] hover:text-[#0A84FF] transition-colors py-1">
+                    {item.label}
                   </a>
                 ))}
                 <div className="pt-2">
@@ -464,8 +472,7 @@ export default function Home() {
               {/* Video card */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0F172A] shadow-2xl shadow-[#0A84FF]/10 border border-[#1E293B]">
                 <video id="hero-video" src="/Create_a_luxury_technology_bra.mp4" autoPlay loop muted playsInline
-                  className="w-full h-full object-cover opacity-95"
-                  style={{ objectPosition: "center 20%", transform: "scale(1.25)", transformOrigin: "center top" }} />
+                  className="w-full h-full object-cover opacity-95" />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/50 via-transparent to-transparent pointer-events-none" />
                 {/* Sound toggle (positioned bottom-right for clean visual alignment) */}
