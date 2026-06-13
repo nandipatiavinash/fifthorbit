@@ -354,11 +354,11 @@ export default function Home() {
         <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${isScrolled ? "glass-nav py-3" : "bg-transparent py-5"}`}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center select-none group -ml-1.5">
-              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-12 h-12 flex-shrink-0 -mr-1.5 translate-y-[1.5px]">
-                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="48px" className="object-contain" priority />
+            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center gap-2 md:gap-2.5 select-none group">
+              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-6 h-6 md:w-7 md:h-7 flex-shrink-0">
+                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="28px" className="object-contain" priority />
               </motion.div>
-              <span className="font-black text-sm md:text-base tracking-[0.18em] uppercase text-[#0F172A]">FIFTH ORBIT</span>
+              <span className="font-black text-sm md:text-base tracking-[0.18em] uppercase text-[#0F172A] pt-0.5">FIFTH ORBIT</span>
             </a>
 
             {/* Desktop nav */}
@@ -472,7 +472,7 @@ export default function Home() {
               {/* Video card */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#0F172A] shadow-2xl shadow-[#0A84FF]/10 border border-[#1E293B]">
                 <video id="hero-video" src="/Create_a_luxury_technology_bra.mp4" autoPlay loop muted playsInline
-                  className="w-full h-full object-cover opacity-95" />
+                  className="absolute -right-[6%] -bottom-[6%] w-[112%] h-[112%] max-w-none object-cover opacity-95" />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/50 via-transparent to-transparent pointer-events-none" />
                 {/* Sound toggle (positioned bottom-right for clean visual alignment) */}
