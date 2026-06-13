@@ -354,9 +354,9 @@ export default function Home() {
         <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${isScrolled ? "glass-nav py-3" : "bg-transparent py-5"}`}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center gap-2 md:gap-2.5 select-none group">
-              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-6 h-6 md:w-7 md:h-7 flex-shrink-0">
-                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="28px" className="object-contain" priority />
+            <a href="#home" onClick={e => scrollTo(e, "home")} className="flex items-center gap-2.5 select-none group">
+              <motion.div whileHover={{ rotate: 20, scale: 1.1 }} transition={{ type: "spring", stiffness: 300, damping: 12 }} className="relative w-7 h-7 md:w-8 md:h-8 flex-shrink-0">
+                <Image src="/icon_only.png" alt="FIFTH ORBIT" fill sizes="32px" className="object-contain" priority />
               </motion.div>
               <span className="font-black text-sm md:text-base tracking-[0.18em] uppercase text-[#0F172A] pt-0.5">FIFTH ORBIT</span>
             </a>
